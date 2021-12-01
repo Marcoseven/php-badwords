@@ -18,7 +18,8 @@ $change = $_GET["ipsum"];
 </head>
 <body>
     <!-- testo senza censura  -->
-    <h1>Testo: </h1>
+    <h1>PHP Badwords</h1>
+    <h2>Testo: </h2>
     <p> <?= $text ?></p>
 
     <h2>Lunghezza testo: </h2>
@@ -28,7 +29,7 @@ $change = $_GET["ipsum"];
     <!-- testo con censura  -->
     <h2>Testo censurato: </h2>
     <p>
-        <?= $str_replace("ipsum", "***", $text) ?>
+        <?= str_replace("ipsum", "***", $text) ?>
     </p>
 
     <h2>Lunghezza testo censurato: </h2>
