@@ -1,12 +1,11 @@
 <?php
 $text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis expedita, necessitatibus perferendis excepturi quod culpa veritatis dolor voluptatum enim iure ipsum fugiat doloremque praesentium illo perspiciatis rerum? Ipsum, suscipit cupiditate!";
 
-echo "<pre>";
-var_dump($text);
-var_dump(strlen($text));
-echo "<pre>";
+// var_dump($text);
+// var_dump(strlen($text));
 
-//echo $text;
+$change = $_GET["ipsum"];
+
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +17,24 @@ echo "<pre>";
     <title>PHP Badwords</title>
 </head>
 <body>
+    <!-- testo senza censura  -->
     <h1>Testo: </h1>
     <p> <?= $text ?></p>
 
     <h2>Lunghezza testo: </h2>
     <p><?= strlen($text) ?></p>
+    <!-- /testo senza censura  -->
+
+    <!-- testo con censura  -->
+    <h2>Testo censurato: </h2>
+    <p>
+        <?= $str_replace("ipsum", "***", $text) ?>
+    </p>
+
+    <h2>Lunghezza testo censurato: </h2>
+    <p>
+        <?= strlen(str_replace("ipsum", "***", $text)) ?>
+    </p>
+    <!-- /testo con censura  -->
 </body>
 </html>
